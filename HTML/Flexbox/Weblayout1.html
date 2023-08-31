@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>WebLayout 1</title>
+    <style type="text/css">
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: arial;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex; /*  All the body items will chnage to flex items*/
+        flex-direction: row;
+      }
+      #wrapper-div {
+        flex-direction: column;
+        width: 50%;
+
+        height: 100px;
+        margin: auto; /*  To center */
+      }
+      #logo-div {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        min-height: 50px;
+        background-color: lightgrey;
+        align-items: center; /* vertically center*/
+        padding-left: 2%;
+      }
+      #Nav-div {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        min-height: 30px;
+        background-color: lightgrey;
+        margin-top: 10px;
+        justify-content: center; /*  Here the flex direction was row to center it we use justifycontent*/
+        align-items: center; /*first row/horizontal done  to get vertically center we should use alignitems*/
+      }
+      #Header-div {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        background-color: lightgrey;
+        min-height: 100px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px; /*to get space between the elements  */
+      }
+      #Main-div {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        background-color: red;
+        min-height: 400px;
+        margin-top: 10px;
+      }
+      #sidebar {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 20%;
+        justify-content: center;
+        align-items: center;
+        background-color: bisque;
+      }
+      #bodyarea {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 80%;
+        justify-content: center;
+        align-items: center;
+        background-color: red;
+      }
+      #footer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: lightgrey;
+        margin-top: 10px;
+        min-height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper-div">
+      <div id="logo-div">Logo</div>
+      <div id="Nav-div">Navigation</div>
+      <div id="Header-div">Header</div>
+      <div id="Main-div">
+        <div id="sidebar">Sidebar</div>
+        <div id="bodyarea">BodyArea</div>
+      </div>
+      <div id="footer">Footer</div>
+    </div>
+  </body>
+</html>

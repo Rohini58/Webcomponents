@@ -1,0 +1,51 @@
+body {
+  font-family: Arial;
+}
+
+/* Style the header */
+.header {
+  background-color: blue;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+  height: 250px; /* Should be removed. Only for demonstration */
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;
+  background-color: whitesmoke;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+  background-color: lightblue;
+}
+
+/* Always clear floats after the columns */
+/* Style the footer */
+.footer {
+  clear: left;
+  background-color: blueviolet;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 550px) {
+  .column.side,
+  .column.middle {
+    width: 100%;
+  }
+}
