@@ -5,18 +5,20 @@
     <title>WebLayout 1</title>
     <style type="text/css">
       * {
+        /*  this all are mandatory */
         margin: 0px;
         padding: 0px;
         font-family: arial;
-        box-sizing: border-box;
+        box-sizing: border-box; /*All div are of same size now! */
       }
       body {
         display: flex; /*  All the body items will chnage to flex items*/
         flex-direction: row;
       }
       #wrapper-div {
+        /* these will wrap the entire layout  */
         flex-direction: column;
-        width: 50%;
+        width: 50%; /* in the body if the flex-direction was column then we should use width property */
 
         height: 100px;
         margin: auto; /*  To center */

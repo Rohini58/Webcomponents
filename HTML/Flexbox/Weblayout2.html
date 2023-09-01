@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weblayout2</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: Arial;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      /*
+      #wrapper-div {
+        display: flex;
+        flex-direction: column;
+        width: 60%; 
+        min-height: 100px;
+        background-color: pink;
+        margin: auto;
+      }
+      
+      
+      
+      
+      */
+
+      #logo-nav {
+        display: flex;
+        flex-direction: row;
+        width: 60%;
+        min-height: 50px;
+        background-color: lightgreen;
+        margin: auto;
+      }
+      #logo {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 50%;
+        background-color: red;
+        padding-left: 2%;
+      }
+      #Nav {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 50%;
+        justify-content: center;
+        align-items: center;
+      }
+      .row {
+        display: flex;
+        flex-direction: row;
+        background-color: pink;
+
+        width: 60%;
+        min-height: 100px;
+        margin: 0 auto;
+        margin-top: 10px;
+        justify-content: space-between;
+      }
+      #col1 {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 20%;
+        background-color: aquamarine;
+      }
+      #space {
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper-div"></div>
+    <div id="logo-nav">
+      <div id="logo">Logo</div>
+      <div id="Nav">Navigation</div>
+    </div>
+    <div id="space">
+      <div class="row">
+        <div id="col1"></div>
+        <div id="col2"></div>
+        <div id="col3"></div>
+      </div>
+    </div>
+  </body>
+</html>

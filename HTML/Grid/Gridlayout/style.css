@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial;
+  background: url(bg.jpg);
+  background-size: cover;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-weight: 800;
+  margin: 16px 0;
+}
+
+h3 {
+  font-weight: 800;
+  margin: 8px 0;
+}
+p {
+  margin: 16px 0;
+  line-height: 1.75;
+  font-weight: 400;
+}
+img {
+  height: auto;
+  margin-top: 15px;
+}
+
+header {
+  line-height: 100px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+}
+nav ul li {
+  display: inline;
+  padding: 0 16px;
+}
+nav ul li a {
+  color: blanchedalmond;
+}
+.mobile {
+  /*to see in a dekstop version  */
+  display: none;
+}
+@media (max-width: 900px) {
+  nav {
+    position: static;
+  }
+  nav ul {
+    width: 100%;
+    top: 100px;
+    position: absolute;
+    height: 40vh;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  nav ul li {
+    display: block;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /*3 equal columns */
+  grid-template-rows: 100px auto 100px; /* 100px for header; auto for Mainand Aside ;100px for footer */
+  height: 100vh; /*the minimum height of an element should be 100% of the viewport height*/
+  width: 70%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: brown;
+  /*
+      grid-column-start: 1;
+      grid-column-end: 4;
+      */
+
+  grid-column-start: span 3; /* this says to span across 3coloumns */
+
+  /* 3rd way rowstart/column start/row end/coloumn end
+      grid-area: 1/1/2/4;
+      */
+}
+
+aside {
+  background-color: aqua;
+  grid-column-start: 1;
+}
+main {
+  background-color: blue;
+  grid-column-start: span 2;
+}
+footer {
+  background-color: darkcyan;
+  grid-column-start: span 3;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px auto auto 100px; /* 100px for header ; auto for aise ; auto for main; 100px for  footer */
+    width: 100%;
+  }
+  header,
+  aside,
+  main,
+  footer {
+    grid-column-start: span 1;
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /*3 equal columns */
+        grid-template-rows: 100px auto 100px; /* 100px for header; auto for Mainand Aside ;100px for footer */
+        height: 100vh; /*the minimum height of an element should be 100% of the viewport height*/
+        width: 70%;
+        margin: 0 auto;
+      }
+
+      header {
+        background-color: brown;
+        /*
+      grid-column-start: 1;
+      grid-column-end: 4;
+      */
+
+        grid-column-start: span 3; /* this says to span across 3coloumns */
+
+        /* 3rd way rowstart/column start/row end/coloumn end
+      grid-area: 1/1/2/4;
+      */
+      }
+
+      aside {
+        background-color: aqua;
+        grid-column-start: 1;
+      }
+      main {
+        background-color: blue;
+        grid-column-start: span 2;
+      }
+      footer {
+        background-color: darkcyan;
+        grid-column-start: span 3;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          grid-template-columns: 1fr;
+          grid-template-rows: 100px auto auto 100px; /* 100px for header ; auto for aise ; auto for main; 100px for  footer */
+        }
+        header,
+        aside,
+        main,
+        footer {
+          grid-column-start: span 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Header</h1>
+      </header>
+      <aside>
+        <h1>Aside</h1>
+      </aside>
+      <main>
+        <h1>Main</h1>
+      </main>
+      <footer>
+        <h1>Footer</h1>
+      </footer>
+    </div>
+  </body>
+</html>
