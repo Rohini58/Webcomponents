@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment1</title>
+    <style type="text/css">
+      * {
+        /*  this all are mandatory */
+        margin: 0px;
+        padding: 0px;
+        font-family: arial;
+        box-sizing: border-box; /*All div are of same size now! */
+      }
+
+      #wrapper-div {
+        /* these will wrap the entire layout  */
+        flex-direction: column;
+        width: 50%; /* in the body if the flex-direction was column then we should use width property */
+
+        height: 100px;
+        margin: auto; /*  To center */
+      }
+      #header {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        min-height: 50px;
+        background-color: lightgrey;
+        align-items: center; /* vertically center*/
+        padding-left: 2%;
+        text-align: center;
+        justify-content: center;
+      }
+      #Main-div {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        background-color: red;
+        min-height: 400px;
+      }
+      #sidebar {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 50%;
+        background-color: aqua;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 50%;
+        margin: 8px;
+        justify-content: space-between;
+      }
+      .row > div {
+        background-color: #f1f1f1;
+
+        margin: 10px;
+        text-align: center;
+        line-height: 95px;
+        font-size: 30px;
+
+        /*
+        background-color: #f1f1f1;
+        flex-basis: 50px;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px; */
+      }
+
+      /*
+      .flex-row-item{
+        display: flex;;
+        flex-direction: row;
+        flex-basis: 20%;
+background-color: bisque;
+       */
+
+      .button {
+        border: none;
+
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        margin-left: 35%;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper-div">
+      <div id="header">WEBSERIES</div>
+      <div id="Main-div">
+        <div id="sidebar">
+          <form>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" /><br /><br /><br />
+            <label for="dir">Director:</label>
+            <input type="text" id="dir" name="dir" /><br /><br /><br />
+            <label for="stars">Stars:</label>
+            <input type="text" id="stars" name="stars" /><br /><br /><br />
+            <label for="straming">Streaming On:</label>
+            <select>
+              <option value="Amazon Prime">Amazon Prime</option>
+              <option value="Netflix">Netflix</option>
+              <option value="Hulu">Hulu</option>
+              <option value="Hotstar">Hotstar</option>
+              <option value="Voot">Voot</option></select
+            ><br /><br /><br />
+            <button class="button" type="button">Add</button>
+          </form>
+        </div>
+
+        <div class="row">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
