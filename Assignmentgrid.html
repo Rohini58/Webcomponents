@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /*3 equal columns */
+        grid-template-rows: 100px auto 100px; /* 100px for header; auto for Mainand Aside ;100px for footer */
+        /*the minimum height of an element should be 100% of the viewport height*/
+
+        width: 70%;
+        margin: 0 auto;
+      }
+
+      header {
+        background-color: brown;
+        /*
+      grid-column-start: 1;
+      grid-column-end: 4;
+      */
+
+        grid-column-start: span 3; /* this says to span across 3coloumns */
+
+        /* 3rd way rowstart/column start/row end/coloumn end
+      grid-area: 1/1/2/4;
+      */
+      }
+
+      aside {
+        background-color: aqua;
+        grid-column-start: 1;
+      }
+      main {
+        background-color: blue;
+        grid-column-start: span 2;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
+        grid-template-rows: repeat(
+          4,
+          100px
+        ); /* 4 rows with a fixed height of 100px each */
+        gap: 10px; /* Gap between grid items */
+      }
+      .child {
+        background-color: #3498db;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+      .center {
+        margin-top: 70px;
+        margin-right: 10px;
+        margin-left: 20px;
+      }
+      button {
+        width: auto;
+        display: block;
+        margin: auto;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          grid-template-columns: 1fr;
+          grid-template-rows: 100px auto auto 100px; /* 100px for header ; auto for aise ; auto for main; 100px for  footer */
+        }
+        header,
+        aside,
+        main,
+        footer {
+          grid-column-start: span 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>WEBSERIES</h1>
+      </header>
+      <aside>
+        <form>
+          <div class="center">
+            <label for="title">Title:</label
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="title" name="title" /><br /><br /><br />
+            <label for="dir">Director:</label
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="dir" name="dir" /><br /><br /><br />
+            <label for="stars">Stars:</label
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="stars" name="stars" /><br /><br /><br />
+            <label for="straming">Streaming On:</label>
+            <select>
+              <option value="Amazon Prime">Amazon Prime</option>
+              <option value="Netflix">Netflix</option>
+              <option value="Hulu">Hulu</option>
+              <option value="Hotstar">Hotstar</option>
+              <option value="Voot">Voot</option></select
+            ><br /><br /><br />
+          </div>
+          <button class="button" type="button">Add</button>
+        </form>
+      </aside>
+      <main>
+        <div class="row">
+          <div class="child">1</div>
+          <div class="child">2</div>
+
+          <div class="child">3</div>
+          <div class="child">4</div>
+
+          <div class="child">5</div>
+          <div class="child">6</div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
