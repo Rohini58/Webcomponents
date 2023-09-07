@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  
+  <title>Document</title>
+ </head>
+ <body>
+	<h1> Registration form </h1>
+	<form name="myform" action="Success.html" method="post" onsubmit="return validate()" >
+		<!-- min it shoud vontain 2 alphabets -->
+        Name:<input type="text" name="name11" placeholder="enter your name" id="name1" />
+				<span id="username"> </span><br><br>
+		Email:<input type="text" name="email1" placeholder="enter your email" id="email1"  />
+			<span id="useremail"> </span><br><br>
+		Passowrd:<input type="password" name="pass1" placeholder="enter your Password" id="pass1" />
+				<span id="userpassword"> </span><br><br>
+		ConfirmPassowrd:<input type="password" name="cpass1" placeholder="enter your confirmPassword" id="cpass1"/>
+				<span id="userconfirmpassword"> </span><br><br>
+		DOB:<input type="date" name="date1" id="date1"/>
+				<span id="userdate"> </span><br><br>
+		MobileNumber:<input type="text" name="mobile1" id="mobile1" />
+				<span id="usernumber"><br><br>
+		<input type="submit" value="submit" />
+	</form>
+	<script type="text/javascript">
+	function validate(){									
+		var name = document.getElementById("name1").value;
+		var email=document.getElementById("email1").value;
+		var pass=document.getElementById("pass1").value;
+		var cpass=document.getElementById("cpass1").value;
+		var date=document.getElementById("date1").value;
+		var currdate=new Date();
+		var mbnum=document.getElementById("mobile1").value;
+		 if (name == "" || name==null) {
+				document.getElementById("username").innerHTML =
+				"Please fill the Name field";
+          return false;
+        }
+		if(email == ""){
+			document.getElementById("useremail").innerHTML =
+				"Please enter the emailid";
+          return false;
+		}
+		if(email.indexOf("@")<=0){
+			document.getElementById("useremail").innerHTML =
+				"@ it should not be lessthan or equal to zero ex:rohini@gmail.com";
+          return false;
+		}
+		if(pass== " "){
+			document.getElementById("userpassword").innerHTML =
+				"Please enter the password";
+          return false;
+		}
+		if(pass.length < 6){
+			 alert("password must contain 6 characters");
+			 return false; 
+		}
+		if(cpass== " "){
+			document.getElementById("userpassword").innerHTML =
+				"Please enter the password";
+          return false;
+		}
+		if(pass == cpass){
+			return true; 
+			
+		}else{
+			alert("password and cpassword must be same");
+			return false;
+		}
+		
+		if(date ==" "){
+			document.getElementById("userdate").innerHTML =
+				"Please enter the date";
+          return false;
+		}
+		if(mbnum == " "){
+			document.getElementById("usernumber").innerHTML =
+				"Please enter the date";
+          return false;
+		}
+		if(mbnum.length != 10){
+			document.getElementById("usernumber").innerHTML =
+				"Please enter the 10digit number";
+          return false;
+		}
+
+		
+
+
+		
+	}
+	</script>
+ </body>
+</html>
