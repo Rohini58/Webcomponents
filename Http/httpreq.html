@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <script>
+      const request = new XMLHttpRequest();
+      request.addEventListener("readystatechange", () => {
+        if (request.readyState === 4 && request.status === 200) {
+          console.log(request, request.responseText);
+        } else if (request.readystate === 4) {
+          console.log("Could not fetch the data");
+        }
+      });
+      request.open("GET", "http://jsonplaceholder.typicode.com/users");
+      request.send();
+    </script>
+  </body>
+</html>
