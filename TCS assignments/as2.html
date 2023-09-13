@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .webseries-card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="webseries-container"></div>
+    <div>
+      <input type="text" id="title" placeholder="Title" />
+      <input type="text" id="director" placeholder="Director" />
+      <input type="text" id="stars" placeholder="Stars" />
+      <input
+        type="text"
+        id="streamingPlatform"
+        placeholder="Streaming Platform"
+      />
+      <button id="add-button">Add Web Series</button>
+    </div>
+
+    <script>
+      class WebSeries {
+        constructor(title, director, stars, streamingPlatform) {
+          this.title = title.toLowerCase(); // Convert title to lowercase
+          this.director = director;
+          this.stars = stars;
+          this.streamingPlatform = streamingPlatform;
+        }
+      }
+
+      // Function to display a web series card
+      function displayWebSeries(webSeries) {
+        const container = document.getElementById("webseries-container");
+        const card = document.createElement("div");
+        card.classList.add("webseries-card");
+        card.innerHTML = `
+                <p><strong>Title:</strong> ${webSeries.title.toUpperCase()}</p>
+                <p><strong>Director:</strong> ${webSeries.director}</p>
+                <p><strong>Stars:</strong> ${webSeries.stars}</p>
+                <p><strong>Platform:</strong> ${webSeries.streamingPlatform}</p>
+                <button class="delete-button">Delete</button>
+            `;
+        container.appendChild(card);
+
+        // Add event listener for delete button
+        const deleteButton = card.querySelector(".delete-button");
+        deleteButton.addEventListener("click", () => {
+          setTimeout(() => {
+            card.remove(); // Delete the card after 1 minute
+          }, 1000);
+        });
+      }
+
+      // Array to store web series objects
+      const webSeriesArray = [];
+
+      // Add button click event
+      const addButton = document.getElementById("add-button");
+      addButton.addEventListener("click", () => {
+        const titleInput = document.getElementById("title");
+        const directorInput = document.getElementById("director");
+        const starsInput = document.getElementById("stars");
+        const platformInput = document.getElementById("streamingPlatform");
+
+        const webSeries = new WebSeries(
+          titleInput.value,
+          directorInput.value,
+          starsInput.value,
+          platformInput.value
+        );
+
+        webSeriesArray.push(webSeries);
+
+        // Display the web series card
+        displayWebSeries(webSeries);
+
+        // Clear input fields
+        titleInput.value = "";
+        directorInput.value = "";
+        starsInput.value = "";
+        platformInput.value = "";
+      });
+
+      // Prepopulate some web series data
+      const initialData = [
+        {
+          title: "Breaking Bad",
+          director: "Vince Gilligan",
+          stars: "Bryan Cranston, Aaron Paul",
+          streamingPlatform: "Netflix",
+        },
+        {
+          title: "Kushi",
+          director: "Maheshbabu",
+          stars: "Samantha,Vijay",
+          streamingPlatform: "Prime",
+        },
+      ];
+
+      // Display initial data
+      initialData.forEach((webSeries) => {
+        webSeriesArray.push(webSeries);
+        displayWebSeries(webSeries);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="submit" class="button" id="spcl" value="GetData" />
+    <div id="data"></div>
+    <script>
+      let btn = document.getElementById("spcl");
+      let dataele = document.getElementById("data");
+      btn.addEventListener("click", loadData);
+      function loadData() {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "test.txt", true);
+        xhr.send();
+        xhr.onprogress = function () {
+          dataele.innerText = "Loading";
+        };
+        xhr.onload = function () {
+          dataele.innerText = xhr.responseText;
+        };
+      }
+    </script>
+  </body>
+</html>

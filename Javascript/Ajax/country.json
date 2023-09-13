@@ -1,0 +1,12 @@
+[
+  {
+    "name": "india",
+    "capital": "Delhi",
+    "PrimeMinister": "Narendra Modi"
+  },
+  {
+    "name": "Europe",
+    "capital": "Brussels",
+    "PrimeMinister": " Ursula von der Leyen"
+  }
+]

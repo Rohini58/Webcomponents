@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="submit" class="button" id="spcl" value="GetData" />
+    <div id="data"></div>
+    <script>
+      let btn = document.getElementById("spcl");
+      let dataele = document.getElementById("data");
+      btn.addEventListener("click", loadData);
+      function loadData() {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "country.json", true);
+        xhr.send();
+
+        xhr.onload = function () {
+          let result = xhr.responseText;
+          result = JSON.parse(result);
+          console.log(result);
+          let str = `<table border="2"> <tr>`;
+          for (key in result) {
+            str = str + `<th>${key}</th>`;
+          }
+          str = str + `</tr><tr>`;
+          for (key in result) {
+            str = str + `<td>${result[key]}</td>`;
+          }
+          str = str + `<tr></table>`;
+          dataele.innerHTML = str;
+        };
+      }
+    </script>
+  </body>
+</html>
