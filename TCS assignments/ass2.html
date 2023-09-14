@@ -103,9 +103,10 @@
 
         // Step 7: Delete button functionality
         const deleteButton = card.querySelector(".delete-button");
+
         deleteButton.addEventListener("click", () => {
           setTimeout(() => {
-            webSeriesArray.splice(index, 1); //At  index position it will  remove 1 element
+            //webSeriesArray.splice(index, 1); //At  index position it will  remove 1 element
             card.remove();
           }, 3000); // Delete after 30000ms
         });
@@ -141,6 +142,7 @@
               }">Delete</button>
             `;
         webSeriesContainer.appendChild(newCard);
+        //once user entered the detais it will be pused to the cards and the input fileds should be empty
         document.getElementById("titleInput").value = "";
         document.getElementById("directorInput").value = "";
         document.getElementById("starsInput").value = "";
@@ -150,7 +152,7 @@
         const newDeleteButton = newCard.querySelector(".delete-button");
         newDeleteButton.addEventListener("click", () => {
           setTimeout(() => {
-            webSeriesArray.pop();
+            //webSeriesArray.pop();
             newCard.remove();
           }, 3000);
         });
