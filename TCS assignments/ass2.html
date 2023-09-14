@@ -141,6 +141,10 @@
               }">Delete</button>
             `;
         webSeriesContainer.appendChild(newCard);
+        document.getElementById("titleInput").value = "";
+        document.getElementById("directorInput").value = "";
+        document.getElementById("starsInput").value = "";
+        document.getElementById("platformInput").value = "";
 
         // Add delete button functionality to the new card
         const newDeleteButton = newCard.querySelector(".delete-button");
