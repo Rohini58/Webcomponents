@@ -17,57 +17,52 @@
     <button id="addButton">Add Web Series</button>
 
     <script>
-      // Step 1: Create WebSeries class
+      // Step 1: Create WebSeries class and adding properties
       class WebSeries {
-        constructor(title, director, stars, streamingPlatform) {
-          this._title = title;
-          this._director = director;
-          this._stars = stars;
-          this._streamingPlatform = streamingPlatform;
+        constructor(title, director, stars, streamingplatform) {
+          this.title = title;
+          this.director = director;
+          this.stars = stars;
+          this.streamingplatform = streamingplatform;
         }
 
         // Step 2: Define getters and setters
+        //get:This method is used to access the properties of an object
+        //set: this method is used to chnage the values of an object
         get title() {
-          return this._title.toUpperCase();
+          return this.title.toUpperCase();
         }
-
-        set title(newTitle) {
-          this._title = newTitle;
-        }
-
         get director() {
-          return this._director;
+          return this.director;
         }
-
-        set director(newDirector) {
-          this._director = newDirector;
-        }
-
         get stars() {
-          return this._stars;
+          return this.stars;
         }
-
-        set stars(newStars) {
-          this._stars = newStars;
+        get streamingplatform() {
+          return this.streamingplatform;
         }
-
-        get streamingPlatform() {
-          return this._streamingPlatform;
+        set title(newtitle) {
+          this.title = newtitle;
         }
-
-        set streamingPlatform(newPlatform) {
-          this._streamingPlatform = newPlatform;
+        set director(newdirector) {
+          this.director = newdirector;
+        }
+        set stars(newstars) {
+          this.stars = newstars;
+        }
+        set streamingplatform(newstreamingplatform) {
+          this.streamingplatform = newstreamingplatform;
         }
       }
 
-      // Step 3: Hardcode an array of web series objects
+      // Step 3: Hardcode an array of each elements as an object of webseries
 
       const webSeriesArray = [
         {
-          title: "Breaking Bad",
-          director: "Vince Gilligan",
-          stars: "Bryan Cranston, Aaron Paul",
-          streamingPlatform: "Netflix",
+          title: "Spy",
+          director: "Garry BH",
+          stars: "Nikhil,Kajal",
+          streamingPlatform: "Prime",
         },
         {
           title: "Kushi",
@@ -77,10 +72,11 @@
         },
       ];
 
-      // Step 4: Display web series cards
+      // Step 4:Loop over this array to display 6cardsof webseries
       const webSeriesContainer = document.getElementById("webSeriesContainer");
       webSeriesArray.forEach((webSeries, index) => {
-        const card = document.createElement("div");
+        //forEach method is used to iterate over an array called webSeriesArray
+        const card = document.createElement("div"); // this new <div> element is  created  and assigns it to the card variable. This will represent a card containing information about a web series.
         card.className = "card";
         card.innerHTML = `
               <h2>${webSeries.title.toUpperCase()}</h2>
