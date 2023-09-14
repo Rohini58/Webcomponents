@@ -2,6 +2,13 @@
 <html>
   <head>
     <title>Web Series</title>
+    <style>
+      .card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+      }
+    </style>
   </head>
   <body>
     <h1>Web Series</h1>
@@ -19,43 +26,50 @@
     <script>
       // Step 1: Create WebSeries class and adding properties
       class WebSeries {
-        constructor(title, director, stars, streamingplatform) {
-          this.title = title;
-          this.director = director;
-          this.stars = stars;
-          this.streamingplatform = streamingplatform;
+        constructor(title, director, stars, streamingPlatform) {
+          this._title = title;
+          this._director = director;
+          this._stars = stars;
+          this._streamingPlatform = streamingPlatform;
         }
 
         // Step 2: Define getters and setters
         //get:This method is used to access the properties of an object
         //set: this method is used to chnage the values of an object
         get title() {
-          return this.title.toUpperCase();
+          return this._title.toUpperCase();
         }
+
+        set title(newTitle) {
+          this._title = newTitle;
+        }
+
         get director() {
-          return this.director;
+          return this._director;
         }
+
+        set director(newDirector) {
+          this._director = newDirector;
+        }
+
         get stars() {
-          return this.stars;
+          return this._stars;
         }
-        get streamingplatform() {
-          return this.streamingplatform;
+
+        set stars(newStars) {
+          this._stars = newStars;
         }
-        set title(newtitle) {
-          this.title = newtitle;
+
+        get streamingPlatform() {
+          return this._streamingPlatform;
         }
-        set director(newdirector) {
-          this.director = newdirector;
-        }
-        set stars(newstars) {
-          this.stars = newstars;
-        }
-        set streamingplatform(newstreamingplatform) {
-          this.streamingplatform = newstreamingplatform;
+
+        set streamingPlatform(newPlatform) {
+          this._streamingPlatform = newPlatform;
         }
       }
 
-      // Step 3: Hardcode an array of each elements as an object of webseries
+      // Step 3: Hardcode an array of web series objects
 
       const webSeriesArray = [
         {
@@ -76,7 +90,7 @@
       const webSeriesContainer = document.getElementById("webSeriesContainer");
       webSeriesArray.forEach((webSeries, index) => {
         //forEach method is used to iterate over an array called webSeriesArray
-        const card = document.createElement("div"); // this new <div> element is  created  and assigns it to the card variable. This will represent a card containing information about a web series.
+        const card = document.createElement("div"); //this new <div> element is  created  and assigns it to the card variable. This will represent a card containing information about a web series.
         card.className = "card";
         card.innerHTML = `
               <h2>${webSeries.title.toUpperCase()}</h2>
@@ -91,9 +105,9 @@
         const deleteButton = card.querySelector(".delete-button");
         deleteButton.addEventListener("click", () => {
           setTimeout(() => {
-            webSeriesArray.splice(index, 1);
+            webSeriesArray.splice(index, 1); //At  index position it will  remove 1 element
             card.remove();
-          }, 3000); // Delete after 1 minute
+          }, 3000); // Delete after 30000ms
         });
       });
 
@@ -118,7 +132,7 @@
         const newCard = document.createElement("div");
         newCard.className = "card";
         newCard.innerHTML = `
-              <h2>${newWebSeries.title}</h2>
+              <h2>${newWebSeries.title.toUpperCase()}</h2>
               <p>Director: ${newWebSeries.director}</p>
               <p>Stars: ${newWebSeries.stars}</p>
               <p>Streaming Platform: ${newWebSeries.streamingPlatform}</p>
@@ -134,17 +148,9 @@
           setTimeout(() => {
             webSeriesArray.pop();
             newCard.remove();
-          }, 3000); // Delete after 1 minute
+          }, 3000);
         });
       });
     </script>
-
-    <style>
-      .card {
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin: 10px;
-      }
-    </style>
   </body>
 </html>
