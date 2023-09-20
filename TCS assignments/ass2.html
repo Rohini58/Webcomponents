@@ -151,10 +151,10 @@
         // Add delete button functionality to the new card
         const newDeleteButton = newCard.querySelector(".delete-button");
         newDeleteButton.addEventListener("click", () => {
-          setTimeout(() => {
-            //webSeriesArray.pop();
-            newCard.remove();
-          }, 3000);
+          //setTimeout(() => { without settimeout also we can remove the card using remove method
+          //webSeriesArray.pop();
+          newCard.remove();
+          // }, 3000);
         });
       });
     </script>

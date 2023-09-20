@@ -10,7 +10,7 @@
     <div id="data"></div>
     <script>
       let btn = document.getElementById("spcl");
-      let dataele = document.getElementById("data");
+      let dataEle = document.getElementById("data");
       btn.addEventListener("click", loadData);
       function loadData() {
         let xhr = new XMLHttpRequest();
@@ -30,7 +30,7 @@
             str = str + `<td>${result[key]}</td>`;
           }
           str = str + `<tr></table>`;
-          dataele.innerHTML = str;
+          dataEle.innerHTML = str;
         };
       }
     </script>
