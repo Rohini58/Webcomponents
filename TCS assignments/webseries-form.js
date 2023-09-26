@@ -1,3 +1,3 @@
-import { WebSeriesForm } from './src/Assign3.js';
+import { WebSeriesForm } from './src/webseriesform';
 
 window.customElements.define('webseries-form', WebSeriesForm);
