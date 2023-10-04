@@ -1,11 +1,11 @@
 import { LitElement, html, css, property } from 'lit-element';
 
 export class WebSeries extends LitElement {
-  //@property({ type: Array }) webSeriesArray = [];
-  //@property({ type: String }) newWebSeriesTitle = '';
-  // @property({ type: String }) newWebSeriesDirector = '';
-  //@property({ type: String }) newWebSeriesStars = '';
-  //@property({ type: String }) newWebSeriesPlatform = '';
+  @property({ type: Array }) webSeriesArray = [];
+  @property({ type: String }) newWebSeriesTitle = '';
+  @property({ type: String }) newWebSeriesDirector = '';
+  @property({ type: String }) newWebSeriesStars = '';
+  @property({ type: String }) newWebSeriesPlatform = '';
 
   constructor() {
     super();

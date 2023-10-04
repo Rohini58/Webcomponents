@@ -22,6 +22,8 @@
     "storybook:build": "npm run analyze -- --exclude dist && build-storybook"
   },
   "dependencies": {
+    "@lion/tabs": "^0.13.1",
+    "@lion/ui": "^0.4.1",
     "lit": "^2.0.2"
   },
   "devDependencies": {
