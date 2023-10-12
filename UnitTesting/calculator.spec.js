@@ -2,6 +2,28 @@
 //to disable suit: xdescribe(.....)
 describe("calculator1.js", function () {
   //in these we will write tests or specs
+  let someData; //declaring a varaiblename for creating befreEach and afterEach
+  beforeEach(() => {
+    // This code will run before each test spec
+
+    someData = [1, 2, 3];
+  });
+
+  afterEach(() => {
+    // This code will run after each test spec and also cleanup after the spec execution
+    someData = null;
+  });
+
+  it("should have the correct length", () => {
+    expect(someData.length).toBe(3); //pass
+  });
+
+  it("should contain specific elements", () => {
+    expect(someData).toContain(1); //pass
+    expect(someData).toContain(2); //pass
+    expect(someData).toContain(3); //pass
+  });
+
   xit("Should add two numbers", function () {
     //disabling a spec with x.
     //here we need to write expectations

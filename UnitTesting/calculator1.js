@@ -1,3 +1,12 @@
+// Define updateResult as a global function
+function updateResult(result) {
+  const resultElement = document.getElementById("result");
+  if (result === null) {
+    resultElement.textContent = "Error: Division by zero or modulo by zero.";
+  } else {
+    resultElement.textContent = `Result: ${result}`;
+  }
+}
 function add(a, b) {
   return a + b;
 }
@@ -23,6 +32,7 @@ function modulo(a, b) {
   }
   return a % b;
 }
+
 function calculate() {
   const num1Input = document.getElementById("num1");
   const num2Input = document.getElementById("num2");
@@ -40,8 +50,7 @@ function calculate() {
   }
   // Check if num1 and num2 are valid numbers
   if (isNaN(num1) || isNaN(num2)) {
-    resultElement.textContent =
-      "Error: Invalid input. Please enter valid numbers.";
+    resultElement.textContent = "Invalid input. Please enter valid numbers.";
     return;
   }
 
@@ -68,11 +77,8 @@ function calculate() {
       return;
   }
 
-  if (result === null) {
-    resultElement.textContent = "Error: Division by zero or modulo by zero.";
-  } else {
-    resultElement.textContent = `Result: ${result}`;
-  }
+  // Call the globally defined updateResult function
+  updateResult(result);
 }
 
 // Add the custom matchers to Jasmine within the beforeEach block
